@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0046)http://www.geocities.com/venky_dude/apitut.htm -->
+<HTML><HEAD><TITLE>API Tutorial -by Venkat Mani</TITLE>
+<META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+<META content="Microsoft FrontPage 4.0" name=GENERATOR></HEAD>
+<BODY bgColor=#000000 text=#ffffff>
+<P align=center><FONT color=#ffff00 size=7><EM><STRONG><U>API 
+Tutorial</U></STRONG></EM></FONT></P>
+<P align=left><FONT size=6></FONT>&nbsp;</P>
+<P align=center><FONT color=#ff0000 size=6>What is an API???</FONT></P>
+<P align=left><FONT color=#ffffff>API-stands for Application Programming Interface. If
+you look at the Windows System directory, typically \Windows\System 
+under Window 95/98 and \Winnt\System32 under Windows NT, you will find a number 
+of Dynamic Link Library (.DLL) files. These files contain functions that are 
+used to run the windows os(operating system). These files make up the Windows 
+API. </FONT>The <I>Windows API</I> is a collection of routines available to the 
+programmer. In a way, these API routines work just like Visual Basic's own 
+internal functions. When you need to use the code in an API routine, your Visual 
+Basic program calls that routine. When the Windows API finishes, control returns 
+to your program so that it can continue. </P>
+<P align=left>&nbsp;</P>
+<P align=center><FONT color=#ff0000 size=6>Why do u need to use 
+API???</FONT></P>
+<P align=center><FONT color=#ff0000 size=6></FONT>&nbsp;</P>
+<P>Ever wondered how those programs got the name of your computer??,how those 
+programs add an icon to the system tray??,how programs start as soon as windows 
+starts??.Let's accept it ,Visual Basic has severe limitations in itself. You 
+cannot perform the above tasks just by using plain VB.Here is where the API 
+comes into play. So many Windows API routines exist that just about anything you 
+can do from Windows, you can do from a Visual Basic application by calling the 
+appropriate Windows API routine. In short "Anything any application can do ,your 
+application can do too". You can even force a system reboot by calling the 
+appropriate Windows API routine.</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P align=center><FONT color=#ff0000 size=6>Great, Now how do I use the 
+API???</FONT></P>
+<P align=center><FONT color=#ff0000 size=5></FONT>&nbsp;</P>
+<P align=left><FONT color=#ffffff>Now Before you can use API in you application 
+you need to define the appropriate API. For e.g. you want to force a windows 
+logoff ,you must use the Exit Window API .The declaration for the ExitWindow API 
+is as follows</FONT></P>
+<P align=left><FONT color=#00ffff>Declare Function ExitWindows Lib "user32" 
+Alias "ExitWindows" (ByVal dwReserved As Long, ByVal uReturnCode As Long) As 
+Long</FONT></P>
+<P align=left><FONT color=#ffffff>The function ExitWindows is defined in the 
+user32.dll file. It requires 2 parameters ,dwReserved and uReurnCode.These 2 
+parameters should always be 0.</FONT></P>
+<P align=left><FONT color=#ffffff>After u have declared this api function u need 
+to call it .This is how u do it. Let's say u want to call the function when a 
+user clicks a command button.</FONT></P>
+<P align=left><FONT color=#00ffff>dim lreturn as long</FONT></P>
+<P align=left><FONT color=#00ffff>Private Sub Command1_Click()</FONT></P>
+<P align=left><FONT color=#00ffff>lreturn=ExitWindows(0,0)</FONT></P>
+<P align=left><FONT color=#00ffff>End Sub</FONT></P>
+<P align=left><FONT color=#ffffff>lreturn is the return value you get upon 
+calling ExitWindows.If the function is successful lreturn will have a non zero value. If
+it fails then lreturn will have a zero value.</FONT></P>
+<P align=left><FONT color=#ffffff></FONT>&nbsp;</P>
+<P align=left><FONT color=#ffffff></FONT>&nbsp;</P>
+<P align=center><FONT color=#ff0000 size=6>How can I remember all the API 
+functions and their declarations???</FONT></P>
+<P align=center><FONT color=#ff0000 size=5></FONT>&nbsp;</P>
+<P align=left><FONT color=#ffffff>You don't have to remember their declaration. Visual
+Studio comes with a tool called the API text viewer. You can 
+find it in /Programs/Microsoft Visual Studio/Microsoft Visual Studio tools/API 
+Text Viewer. All u have to do is load the win32api.txt file and voila u have all 
+the declarations at your finger tips and all u have to do is the famous 
+copy/paste routine.</FONT></P>
+<P align=left><FONT color=#ffffff></FONT>&nbsp;</P>
+<P align=center><font size="6" color="#FF0000">What is a Handle???</font></P>
+<P align=left><FONT color=#ffffff>A variable that identifies an object; an 
+indirect reference to an operating system resource. In plain English a handle is 
+variable of type long which uniquely identifies any object like 
+forms,desktop,menus or in other words a handle is a unique id for each of these </FONT>objects. Every window in the Windows operating system is identified by a 
+handle. The desktop window has a handle, a Visual Basic form displayed in an 
+application has a handle, and even the controls on a form, which are themselves 
+actually windows, have handles. You can gather a lot of information about the 
+windows in your application after you get the handle of the window that 
+interests you.</P>
+<P align=left>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P><!-- text below generated by server. PLEASE REMOVE -->
+<DIV></DIV></NOSCRIPT></SCRIPT>
+<SCRIPT language=JavaScript src="apitut_files/ygIELib9.js"></SCRIPT>
+
+<SCRIPT language=JavaScript>var yviContents='http://us.toto.geo.yahoo.com/toto?s=76001067&l=NE&b=1&t=989920082';yviR='us';yfiEA(0);</SCRIPT>
+
+<SCRIPT language=JavaScript src="apitut_files/geov2.js"></SCRIPT>
+
+<SCRIPT language=javascript>geovisit();</SCRIPT>
+<NOSCRIPT><IMG border=0 height=1 src="apitut_files/visit.gif" 
+width=1></NOSCRIPT> <IMG alt=1 height=1 src="apitut_files/serv.gif" width=1> 
+<p align="center"><a href="apitut1.htm"><img border="0" src="jj0041.gif" width="100" height="75"></a></p>
+<p align="left">Comments,Suggestions,Questions&nbsp; send me a mail at <a href="mailto:venky_dude@yahoo.com">venky_dude@yahoo.com</a>
+.Do Visit my <a href="http://www.geocities.com/venky_dude/venkwork.htm">projects
+page</a> for some cool VB codes.</p>
+</BODY></HTML>
